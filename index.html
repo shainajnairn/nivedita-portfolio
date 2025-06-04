@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Nivedita Shainaj Nair, Robotics Software Engineer specializing in autonomous mobile systems, SLAM, and sensor fusion.">
+  <meta name="keywords" content="robotics, software engineering, SLAM, ROS, Python, C++">
+  <meta name="author" content="Nivedita Shainaj Nair">
+  <title>Nivedita Shainaj Nair | Robotics Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #17a2b8;
+      transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #007bff 0%, #6610f2 100%);
+      color: #fff;
+      text-align: center;
+      padding: 6rem 2rem;
+      margin-top: 60px;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero a {
+      background: linear-gradient(135deg, #007bff 0%, #17a2b8 100%);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+
+    .hero a:hover {
+      background: linear-gradient(135deg, #17a2b8 0%, #007bff 100%);
+      animation: pulse 1s infinite;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    section h2 {
+      font-family: 'Lora', serif;
+      font-size: 2.5rem;
+      color: #007bff;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* Profile Photo */
+    .profile-photo {
+      display: block;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #007bff;
+      margin: 0 auto 1.5rem;
+      object-fit: cover;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-photo:hover {
+      transform: rotate(5deg);
+      box-shadow: 0 0 15px rgba(0,123,255,0.5);
+    }
+
+    /* Card Grid for Projects and Experience */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      border: 2px solid #17a2b8;
+    }
+
+    .card h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .card a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .card a:hover {
+      color: #17a2b8;
+    }
+
+    /* Skills Section */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .skills-list span {
+      background: linear-gradient(135deg, #e9ecef 0%, #d1e7ff 100%);
+      color: #333;
+      padding: 0.5rem 1rem;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+
+    .skills-list span:hover {
+      animation: bounce 0.3s;
+    }
+
+    /* Contact Section */
+    .contact-links {
+      text-align: center;
+    }
+
+    .contact-links p {
+      margin: 0.5rem 0;
+    }
+
+    .contact-links a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .contact-links a:hover {
+      color: #17a2b8;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #007bff 0%, #6610f2 100%);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul li {
+        margin: 0.5rem 0;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 2rem 1rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Nivedita Shainaj Nair</h1>
+    <p>Robotics Software Engineer | Autonomous Systems Specialist</p>
+    <a href="#projects">Explore My Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="images/profile.jpg" alt="Nivedita Shainaj Nair Profile Photo" class="profile-photo">
+    <p>I’m Nivedita Shainaj Nair, a Robotics Software Engineer with a Master’s in Mechatronics, Robotics, and Automation Engineering from Northeastern University (May 2025) and a Bachelor’s in Electrical and Electronics Engineering from Vellore Institute of Technology (2023). I specialize in autonomous mobile systems, leveraging C++, Python, ROS, and advanced techniques like SLAM, VIO, and trajectory optimization.</p>
+    <p>My experience spans internships at Frankenbuild Ventures and Bharat Electronics Limited, where I developed real-time systems and fault-tolerant designs. I’m passionate about building efficient solutions for autonomous navigation and am seeking opportunities in robotics and software engineering.</p>
+    <p><a href="https://linkedin.com/in/your-linkedin">LinkedIn</a> | <a href="https://github.com/your-github">GitHub</a></p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Visual-Inertial Odometry with ORB-SLAM3</h3>
+        <p><strong>Northeastern University, Sep 2024 - Dec 2024</strong></p>
+        <p>Developed a real-time vehicle localization system using ORB-SLAM3 on ROS, integrating IMU and monocular camera data. Improved platform tracking reliability by 30% with time-synchronized sensor data.</p>
+        <p>Technologies: ROS, ORB-SLAM3, C++, Python, VN-100 IMU</p>
+        <p><a href="https://github.com/your-github/vio-orb-slam3">View Code</a></p>
+      </div>
+      <div class="card">
+        <h3>LiDAR-based SLAM System with SC-LeGO-LOAM</h3>
+        <p><strong>Northeastern University, Nov 2024 - Dec 2024</strong></p>
+        <p>Enhanced localization accuracy by 25% using SC-LeGO-LOAM on the Mulran dataset. Reduced mapping error by 20% with loop closure detection.</p>
+        <p>Technologies: ROS, SC-LeGO-LOAM, C++, Python, LiDAR</p>
+        <p><a href="https://github.com/your-github/lidar-slam">View Code</a></p>
+      </div>
+      <div class="card">
+        <h3>Adaptive Multi-Resolution Path Planning with AM-RRT*</h3>
+        <p><strong>Northeastern University, Sep 2023 - Dec 2023</strong></p>
+        <p>Reduced computational time by 30% in Gazebo simulations using AM-RRT* with adaptive sampling. Improved trajectory smoothness and obstacle avoidance.</p>
+        <p>Technologies: ROS, AM-RRT*, C++, Python, Gazebo, Rviz</p>
+        <p><a href="https://github.com/your-github/am-rrt">View Code</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>ML/Data Systems Intern - Portfolio Intelligence</h3>
+        <p><strong>Frankenbuild Ventures, Boston, USA | Jan 2025 - Present</strong></p>
+        <p>Improved data validation with ML-based anomaly detection. Built Python-based dashboards with scalable data pipelines and streamlined LP sourcing operations.</p>
+      </div>
+      <div class="card">
+        <h3>Development and Engineering Intern</h3>
+        <p><strong>Bharat Electronics Limited, Ghaziabad, India | Aug 2022 - Dec 2023</strong></p>
+        <p>Reduced downtime by 25% by redesigning a 33kV Vacuum Circuit Breaker. Improved fire safety by 15% with a Nitrogen Injection Fire Protection System.</p>
+      </div>
+      <div class="card">
+        <h3>Undergraduate Research Assistant</h3>
+        <p><strong>Vellore Institute of Technology, Vellore, India | Nov 2022 - Apr 2023</strong></p>
+        <p>Achieved 95% battery monitoring accuracy with ESP32-based IoT architecture. Improved state-of-charge estimation by 20% using hybrid algorithms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Master of Science in Mechatronics, Robotics, and Automation Engineering</h3>
+        <p><strong>Northeastern University, Boston, USA | Sep 2023 - May 2025</strong></p>
+        <p>Coursework: Robotics Sensing and Navigation, Mobile Robotics, Reinforcement Learning, Neural Networks, Pattern Recognition</p>
+      </div>
+      <div class="card">
+        <h3>Bachelor of Technology in Electrical and Electronics Engineering</h3>
+        <p><strong>Vellore Institute of Technology, Chennai, India | July 2019 - May 2023</strong></p>
+        <p>Honors: Departmental Honors Awardee</p>
+        <p>Coursework:  Microcontrollers & Microprocessors, Artificial Intelligence, Neural Networks & Fuzzy Contrsols, Embedded System Design</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span>C++</span>
+      <span>Python</span>
+      <span>ROS</span>
+      <span>ROS 2</span>
+      <span>SLAM</span>
+      <span>VIO</span>
+      <span>OpenCV</span>
+      <span>PyTorch</span>
+      <span>TensorFlow</span>
+      <span>Git</span>
+      <span>MATLAB</span>
+      <span>Arduino IDE</span>
+      <span>Gazebo</span>
+      <span>Rviz</span>
+      <span>LiDAR</span>
+      <span>IMU</span>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <p>Email: <a href="mailto:shainajnait.n@northeastern.edu">shainajnait.n@northeastern.edu</a></p>
+      <p>Phone: <a href="tel:+18575447813">(857) 544-7813</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/your-linkedin">linkedin.com/in/your-linkedin</a></p>
+      <p>GitHub: <a href="https://github.com/your-github">github.com/your-github</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Nivedita Shainaj Nair. All rights reserved.</p>
+  </footer>
+</body>
+</html>
